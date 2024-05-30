@@ -1,0 +1,31 @@
+<?php
+// File to store the visitor count
+$counterFile = "visitor_count.txt";
+
+// Function to increment and return the visitor count
+function incrementVisitorCount($counterFile) {
+    if (file_exists($counterFile)) {
+        $count = file_get_contents($counterFile);
+        $count = intval($count) + 1;
+    } else {
+        $count = 1;
+    }
+    file_put_contents($counterFile, $count);
+    return $count;
+}
+
+// Increment the visitor count
+$visitorCount = incrementVisitorCount($counterFile);
+
+// HTML output
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visitor Counter</title>
+</head>
+<body>
+    <h1>Welcome to Our Website</h1>
+    <p>This website has been visited <?php echo $visitorCount; ?> times.</p>
+</body>
+</html>
