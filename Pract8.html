@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <meta http-equiv="refresh" content="1"> <!-- Refresh every 1 second to update the time -->
+    <style>
+        /* Style the clock display */
+        #clock {
+            font-size: 48px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <?php
+        // Get the current time of the server
+        date_default_timezone_set('Asia/Kolkata'); // Set your desired timezone here
+        $currentTime = date('H:i:s');
+        
+        // Display the current time
+        echo $currentTime;
+        ?>
+    </div>
+</body>
+</html>
